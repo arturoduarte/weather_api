@@ -1,7 +1,4 @@
 class WeatherFinderController < ApplicationController
-  # skip_before_action :protect_pages
-
-  BASE_URL = 'http://api.weatherapi.com/v1/forecast.json'
 
   def index
     keyword = params[:query_text]&.downcase
@@ -23,7 +20,6 @@ class WeatherFinderController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(weather_finder_index_path(city)) }
       format.turbo_stream do
-        # el primer favorite se refiere al id del html a reemplazar
         render(turbo_stream: turbo_stream.replace('weather_response', partial: 'weather', locals: { city: city }))
       end
     end
