@@ -8,8 +8,8 @@ class WeatherFinderController < ApplicationController
     city = nil
     return unless keyword
 
-    # city = search_keyword_in_db(keyword)
-    city = search_keyword_in_cache(keyword).nil? ? nil : City.new(search_keyword_in_cache(keyword))
+    city = search_keyword_in_db(keyword)
+    # city = search_keyword_in_cache(keyword).nil? ? nil : City.new(search_keyword_in_cache(keyword))
 
     if city.nil?
       query = FetchWeatherService.new(keyword).perform
@@ -17,7 +17,7 @@ class WeatherFinderController < ApplicationController
 
       values = store_to_hash(query, keyword)
       city = City.create(values)
-      city = City.new(store_to_cache(values))
+      # city = City.new(store_to_cache(values))
     end
 
     respond_to do |format|
@@ -30,7 +30,7 @@ class WeatherFinderController < ApplicationController
   end
 
   def last_cities_searched
-    @cities = City.limit(10)
+    @cities = City.order(created_at: :desc).limit(10)
   end
 
   private
