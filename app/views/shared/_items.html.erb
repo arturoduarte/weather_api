@@ -1,3 +1,5 @@
+<%= link_to t('.home'), weather_finder_index_path, class: "mx-2 text-teal-500 font-bold" if Current.user %>
+<%= link_to t('.Last Cities'), last_cities_searched_path, class: "mx-2 text-teal-500 font-bold" if Current.user %>
 <%= link_to t('.login'), new_session_path, class: "mx-2 text-teal-500 font-bold" unless Current.user %>
 <%= link_to t('.register'), new_user_path, class: "mx-2 text-teal-500 font-bold" unless Current.user %>
 <%= link_to t('.logout'), session_path(Current.user.id), data: {

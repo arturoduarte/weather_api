@@ -1,0 +1,32 @@
+<div class="flex items-center justify-center bg-sky-300 my-8">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3">IATA</th>
+        <th scope="col" class="px-6 py-3">Región</th>
+        <th scope="col" class="px-6 py-3">Country</th>
+        <th scope="col" class="px-6 py-3">Temperature</th>
+        <th scope="col" class="px-6 py-3">Latitude</th>
+        <th scope="col" class="px-6 py-3">Longitude</th>
+        <th scope="col" class="px-6 py-3">Last Updated</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cities.each do |city| %>
+       <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+        <td><%= city.iata %></td>
+        <td><%= city.region %></td>
+        <td><%= city.country %></td>
+        <td><%= city.temperature %></td>
+        <td><%= city.latitude %></td>
+        <td><%= city.longitude %></td>
+        <td><%= city.last_updated %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com" border="0"></a>
+

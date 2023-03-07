@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
 
   resources :weather_finder, only: %i[index], path: '/weather_finder'
+  get 'last_cities_searched', to: 'weather_finder#last_cities_searched'
 end
