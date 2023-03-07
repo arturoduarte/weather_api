@@ -90,4 +90,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.weather_apikey = {
+    apikey: ENV.fetch('WEATHER_APIKEY')
+  }
 end

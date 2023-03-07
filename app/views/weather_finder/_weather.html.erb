@@ -1,0 +1,45 @@
+<div id='weather_response'>
+  <div class="flex items-center justify-center bg-sky-300 mt-5 grid-rows-1 font-bold" >
+    <% if city.present? %>
+    <ul>
+      <div>
+        IATA:
+        <span style='color: rgb(22 101 52);'><%= city.iata %></span>
+      </div>
+
+      <div>
+        Región:
+        <span style='color: rgb(22 101 52);'><%= city.region %></span>
+      </div>
+
+      <div>
+        Country:
+        <span style='color: rgb(22 101 52);'><%= city.country %></span>
+      </div>
+
+      <div>
+        Temperature:
+        <span style='color: rgb(22 101 52);'><%= city.temperature %> Celsius</span>
+      </div>
+
+      <div>
+        Latitude
+        <span style='color: rgb(22 101 52);'><%= city.latitude %></span>
+      </div>
+
+      <div>
+        Longitude:
+        <span style='color: rgb(22 101 52);'><%= city.longitude %></span>
+      </div>
+
+      <div>
+        Last Updated:
+        <span style='color: rgb(22 101 52);'><%= city.last_updated %></span>
+      </div>
+
+    </ul>
+
+    <% end %>
+
+  </div>
+</div>

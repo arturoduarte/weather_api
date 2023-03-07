@@ -1,0 +1,26 @@
+<div class="flex items-center justify-center bg-sky-300 my-8">
+  <%= form_with(url: weather_finder_index_path, method: :get) do |form| %>
+  <input type="hidden" name="format" value="turbo_stream">
+
+    <%=
+      form.text_field :query_text,
+      placeholder: t('.query_text'),
+      value: params[:query_text],
+      class: "my-8 rounded-2xl border-gray-200 w-96"
+    %>
+    <div class='text-center mb-8'>
+      <%=
+        form.submit 'Search',
+        class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full",
+        format: :turbo_stream
+      %>
+    </div>
+  <% end %>
+
+</div>
+
+<a href="https://www.weatherapi.com/" title="Free Weather API"><img src='//cdn.weatherapi.com/v4/images/weatherapi_logo.png' alt="Weather data by WeatherAPI.com" border="0"></a>
+
+
+
+<%= render partial: "weather", locals: { city: @city }  %>

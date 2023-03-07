@@ -1,0 +1,48 @@
+es:
+  app_name: 'Weather Finder'
+  meta_title: 'Weather Finder by city iata or description!'
+  activerecord:
+    models:
+      user: Usuario
+    attributes:
+      user:
+        email: 'Correo electrónico'
+        username: 'Usuario'
+        password: 'Contraseña'
+    errors:
+      models:
+        user:
+          attributes:
+            username:
+              invalid: Usuario Inválido
+              too_long: Nombre de usuario muy largo
+            email:
+              invalid: inválido
+  weather_finder:
+    index:
+      query_text: Qué desea buscar?
+  common:
+    confirm: '¿Estás seguro?'
+    back: 'Volver'
+    not_logged_in: 'Tienes que hacer login o crearte una cuenta'
+    not_authorized: 'No tienes permisos para esta acción'
+    not_found: 'No se ha encontrado'
+  shared:
+    header:
+      login: 'Acceso'
+      register: 'Registro'
+      logout: 'Salir'
+  authentication:
+    users:
+      create:
+        created: 'Tu cuenta se ha creado!'
+    sessions:
+      create:
+        created: 'Bienvenido!'
+        failed: 'Login inválido!'
+      destroy:
+        destroyed: 'Tu sesión ha terminado! Hasta la próxima'
+  user_mailer:
+    welcome:
+      subject: 'Bienvenido a Vendelo'
+      welcome_message: 'Hey %{username}, bienvenid@ a Vendelo. Esperemos que vendas un montón!'

@@ -1,0 +1,17 @@
+<div class="container mt-5">
+  <%= form_with(url: sessions_path) do |form| %>
+    <div>
+      <%= form.label :login %>
+      <%= form.text_field :login, required: true %>
+    </div>
+
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password, required: true %>
+    </div>
+
+    <div>
+      <%= form.submit 'Login', class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %>
+    </div>
+  <% end %>
+</div>
